@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h1>Listing courses</h1>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Courses</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Workload</th>
+          <th>Specification</th>
+          <th>Start date</th>
+          <th>End date</th>
+          <th>Maximun capacity</th>
+          <th>Minimun capacity</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @courses.each do |course| %>
+        <tr>
+          <td><%= course.name %></td>
+          <td><%= course.workload %></td>
+          <td><%= course.specification %></td>
+          <td><%= course.strat_date %></td>
+          <td><%= course.end_date %></td>
+          <td><%= course.maximum_capacity %></td>
+          <td><%= course.minimum_capacity %></td>
+          <td><%= link_to 'Show', course %></td>
+          <td><%= link_to 'Edit', edit_course_path(course) %></td>
+          <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<br>
+
+<%= link_to 'New Course', new_course_path %>

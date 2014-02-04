@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  workload: MyString
+  specification: MyText
+  strat_date: 2014-02-04
+  end_date: 2014-02-04
+  maximun_capacity: 1
+  minimun_capacity: 1
+
+two:
+  name: MyString
+  workload: MyString
+  specification: MyText
+  strat_date: 2014-02-04
+  end_date: 2014-02-04
+  maximun_capacity: 1
+  minimun_capacity: 1

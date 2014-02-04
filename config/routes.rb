@@ -1,4 +1,6 @@
 Fabsoft::Application.routes.draw do
+  resources :courses
+
   resources :projects
 
   resources :partners
