@@ -1,0 +1,12 @@
+<p>
+  <strong>Title:</strong>
+  <%= @about.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= raw(@about.content) %>
+</p>
+
+<%= link_to 'Edit', edit_about_path(@about) %> |
+<%= link_to 'Back', abouts_path %>

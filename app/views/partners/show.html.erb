@@ -1,0 +1,36 @@
+<div class="page-header">
+	<h2>Show Partner</h2>
+</div>
+
+<div class="container">
+  	<div class="row">
+	    <div class="panel panel-default">
+	      	<div class="panel-heading">
+	        	<h3 class="panel-title">Partner</h3>
+	  		</div>
+	      	<br>
+	      	<div class="panel-body">
+	      		<p class="pull-right">
+				  <%= image_tag @partner.image_url(:thumb).to_s, class: "img-thumbnail" %>
+				</p>
+				<p>
+				  <strong>Name:</strong>
+				  <%= @partner.name %>
+				</p>
+
+				<p>
+				  <strong>Description:</strong>
+				  <%= raw(@partner.description) %>
+				</p>
+
+				<p>
+				  <strong>Url:</strong>
+				  <%= link_to @partner.url, @partner.url %>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>		
+		
+<%= link_to 'Edit', edit_partner_path(@partner) %> |
+<%= link_to 'Back', partners_path %>

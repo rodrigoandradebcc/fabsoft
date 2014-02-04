@@ -1,0 +1,147 @@
+<div class="container">
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Member</h3>
+      </div>
+      <br>
+      	<div class="panel-body">
+		  	<%= simple_form_for @member, :html => { :class => 'form-horizontal' } do |f| %>
+		  		<%= f.error_notification %>
+		  		<div class="form-inputs">
+			  		<div class="form-group">
+				  		<div class="col-xs-2">
+				  		    <%= f.input :login, :required => true, :autofocus => true %>
+			  		  	</div>
+		  		  	</div>
+
+
+					<div class="form-group">
+				  		<div class="col-xs-4">
+					    	<%= f.input :email %>
+						</div>
+		  		  	</div>
+
+		  		  	<div class="form-group">
+	  		  			<div class="col-xs-3">
+	  		  				<%= f.input :password %>
+			  				</div>
+	  				</div>
+
+		  		  	<div class="form-group">
+	  		  			<div class="col-xs-3">
+	  		  				<%= f.input :password_confirmation %>
+		  				</div>
+	  				</div>
+
+		  		  	<div class="form-group">
+	  		  			<div class="col-xs-3">
+	  		  				<%= f.input :name %>
+		  				</div>
+	  				</div>
+
+					<div class="form-group">
+						<div class="col-xs-2">
+							<%= f.input :phone, input_html: { id: "phone" } %>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-xs-2">
+							<%= f.input :cellphone, input_html: { id: "cellphone" } %>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-xs-2">
+							<%= f.input :rg %>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-xs-2">
+							<%= f.input :cpf, input_html: { id: "cpf" } %>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-xs-2">
+							<%= f.input :entry_date, :as => :string, :input_html => { data: {behaviour: "datepicker"}} %>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-xs-9">
+							<%= f.input :address %>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-xs-3">
+							<%= f.input :facebook %>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-xs-3">
+							<%= f.input :twitter %>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-xs-3">
+							<%= f.input :github %>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-xs-3">
+							<%= f.input :gplus, label: "Google Plus" %>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-xs-3">
+							<%= f.input :linkedin %>
+						</div>
+					</div>
+
+					<div class="form-group">
+		            	<div class="col-xs-3">
+		    			      <%= f.input :image %>
+    			       	</div>
+    		      	</div>
+
+					<div class="form-group">
+						<div class="col-xs-1">
+							<%= f.association :roles, as: :check_boxes %>
+						</div>
+					</div>
+				</div>
+	  			<br>
+
+	      		<div class="well">
+			    	<%= f.button :submit, class: "btn btn-primary" %>
+	  				<%= link_to 'Back', members_path, class: "btn btn-default" %>
+	      		</div>
+			<% end %>
+		</div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+	$('[data-behaviour~=datepicker]').datepicker({
+	"format": "yyyy-mm-dd",
+	"weekStart": 1,
+	"autoclose": true
+	});
+</script>
+
+<script type="text/javascript">
+	jQuery(function($){
+	   		$("#phone").mask("(999) 999-9999");
+	   		$("#cellphone").mask("(999) 999-9999");
+	   		$("#cpf").mask("999.999.999-99");
+	});
+</script>

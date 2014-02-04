@@ -1,0 +1,18 @@
+<h1>Crop Member</h1>
+
+<%= image_tag @member.image_url(:large), id: "cropboxmember" %>
+
+<h4>Preview</h4>
+<div style="width:100px; height:100px; overflow:hidden">
+	<%= image_tag @member.image_url(:large), id: "previewmember" %>
+</div>	
+
+
+<%= form_for @member do |f| %>
+	<% %w[x y w h].each do |attribute| %>
+		<%= f.hidden_field "crop_#{attribute}" %><br>
+	<% end %>
+	<div class="actions">
+		<%= f.submit "Crop", class: "btn btn-primary" %>
+	</div>
+<% end %>

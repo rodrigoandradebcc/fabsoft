@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">About</h3>
+      </div>
+      <br>
+      	<div class="panel-body">
+			    <%= simple_form_for @about, html: { class: 'form-horizontal' } do |f| %>
+			  	  <%= f.error_notification %>
+			  	  <div class="form-inputs">
+              <div class="form-group">
+			    	    <div class="col-xs-3">
+                  <%= f.input :title %>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-xs-12">
+			    	      <%= f.input :content %>
+                </div>
+              </div>
+	      		</div>
+	      		<br>
+        		<div class="well">
+		    	    <%= f.button :submit, class: "btn btn-primary" %>
+    				  <%= link_to 'Back', abouts_path, class: "btn btn-default" %>
+        		</div>
+			    <% end %>
+		    </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FabSoft</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<%= render 'layouts/navbar' %>
+			<%= render 'layouts/messages' %>
+			<% if params[:controller] != 'welcome' && params[:controller] != 'devise/registrations' %>
+				<ol class="breadcrumb">
+					<%= render_breadcrumbs :tag => :li, :separator => "" %>
+				</ol>
+			<% end %>  
+			<%= yield %>
+		</div>
+		<hr>
+		<div class="panel-footer">
+			<div class="pull-right">
+				<a href="https://twitter.com/fabsoftcesupa" target="_blank"><%= image_tag('twitter-bird.png', size: "40x40", class: "social-slide2") %></a>
+				<a href="https://www.facebook.com/Fabsoft" target="_blank"><%= image_tag('facebook.png', size: "40x40", class: "social-slide2") %></a>
+			</div>
+			<p>&copy; <%= Time.now.year %> FabSoft - Fabrica de Software do CESUPA. All rights reserved.</p>
+			<p>Av. Governador José Malcher, 1963</p>
+			<p>Cep: 66.060-230</p>
+			<p>Fone: (91) 4009 - 9179</p>
+			<p>Belém - PA - Brasil</p>
+       </div>
+	</div>
+</body>
+</html>
+
+<style type="text/css">
+.social-slide2 {
+	background-image: url('/assets/twitter-bird');
+	-webkit-transition: all ease 0.3s;
+	-moz-transition: all ease 0.3s;
+	-o-transition: all ease 0.3s;
+	-ms-transition: all ease 0.3s;
+	transition: all ease 0.3s;
+	cursor: pointer
+}
+
+.social-slide2:hover {
+	background-position: 0px -48px;
+	box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+}
+</style>
+
+

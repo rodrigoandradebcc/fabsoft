@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>Listing abouts</h1>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">About</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Content</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @abouts.each do |about| %>
+          <tr>
+            <td><%= about.title %></td>
+            <td><%= raw(about.content) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div> <!-- End Panel -->
+</div>
+<br>
+
+<% if @abouts.count > 0 %>
+  <%= link_to 'Show', @abouts.first %>
+  <%= link_to 'Edit', edit_about_path(@abouts.first) %>
+  <%= link_to 'Destroy', @abouts.first, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% else %>
+  <%= link_to 'New About', new_about_path %>
+<% end %>

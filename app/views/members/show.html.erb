@@ -1,0 +1,86 @@
+<div class="page-header">
+	<h2>Show Member</h2>
+</div>
+
+
+<div class="container">
+  	<div class="row">
+	    <div class="panel panel-default">
+	      	<div class="panel-heading">
+	        	<h3 class="panel-title">Member</h3>
+	  		</div>
+	      	<br>
+	      	<div class="panel-body">
+	      		<p class="pull-right">
+				  <%= image_tag @member.image_url(:thumb).to_s, class: "img-thumbnail" %>
+				</p>
+
+				<p>
+				  <strong>Login:</strong>
+				  <%= @member.login %>
+				</p>
+
+				<p>
+				  <strong>Email:</strong>
+				  <%= @member.email %>
+				</p>
+
+
+				<p>
+				  <strong>Name:</strong>
+				  <%= @member.name %>
+				</p>
+
+				<p>
+				  <strong>Phone:</strong>
+				  <%= @member.phone %>
+				</p>
+
+				<p>
+				  <strong>Cellphone:</strong>
+				  <%= @member.cellphone %>
+				</p>
+
+				<p>
+				  <strong>RG:</strong>
+				  <%= @member.rg %>
+				</p>
+
+				<p>
+				  <strong>CPF:</strong>
+				  <%= @member.cpf %>
+				</p>
+
+				<p>
+				  <strong>Entry date:</strong>
+				  <%= @member.entry_date %>
+				</p>
+
+				<p>
+				  <strong>Facebook:</strong>
+				  <%= link_to @member.facebook, @member.facebook, target: "_" %>
+				</p>
+				<p>
+				  <strong>Twitter:</strong>
+				  <%= link_to @member.twitter, @member.twitter, target: "_" %>
+				</p>
+				<p>
+				  <strong>Github:</strong>
+				  <%= link_to @member.github, @member.github, target: "_" %>
+				</p>
+				<p>
+				  <strong>Google Plus:</strong>
+				  <%= link_to @member.gplus, @member.gplus, target: "_" %>
+				</p>
+				<p>
+				  <strong>Linkedin:</strong>
+				  <%= link_to @member.linkedin, @member.linkedin, target: "_" %>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

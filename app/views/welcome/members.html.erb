@@ -1,0 +1,71 @@
+<div class="page-header">
+	<h2>Membros</h2>
+</div>
+
+<% @members.each do |member| %>
+	<% if @control %>
+	<div class="row featurette">
+	   <div class="col-md-9">
+		    <h2 class="featurette-heading"><%= member.name %></h2><br>
+		    <p class="lead">E-mail:<span class="text-muted"> <%= member.email %></span></p>
+		    <p class="lead">Telephone:<span class="text-muted"> <%= member.cellphone %></span></p>
+
+		 	<a href="<%= member.twitter %>" target="_blank"><%= image_tag('twitter-bird.png', class: "social-slide") if member.twitter!="" %></a>
+		 	<a href="<%= member.gplus %>" target="_blank"><%= image_tag('gplus.jpg', class: "social-slide") if member.gplus!="" %></a>
+		 	<a href="<%= member.facebook %>" target="_blank"><%= image_tag('facebook.png', class: "social-slide") if member.facebook!="" %></a>
+		 	<a href="<%= member.github %>" target="_blank"><%= image_tag('github.png', class: "social-slide") if member.github!="" %></a>
+		 	<a href="<%= member.linkedin %>" target="_blank"><%= image_tag('linkedin.png', class: "social-slide") if member.linkedin!="" %></a>
+	   </div>
+	   <div class="col-md-3">
+	     <%= image_tag member.image_url(:thumb).to_s, class: "img-thumbnail" %>
+	   </div>
+	   <% @control = false %>
+	</div>
+	<hr>
+	<% else %>		
+	 <div class="row featurette">
+	    <div class="col-md-7">
+	      <%= image_tag member.image_url(:thumb).to_s, class: "img-thumbnail" %>
+	    </div>
+	    <div class="col-md-5">
+	 	    <h2 class="featurette-heading"><%= member.name %></h2><br>
+	 	    <p class="lead">E-mail:<span class="text-muted"> <%= member.email %></span></p>
+	 	    <p class="lead">Telephone:<span class="text-muted"> <%= member.cellphone %></span></p>
+
+	 	 	<a href="<%= member.twitter %>" target="_blank"><%= image_tag('twitter-bird.png', class: "social-slide") if member.twitter!="" %></a>
+	 	 	<a href="<%= member.gplus %>" target="_blank"><%= image_tag('gplus.jpg', class: "social-slide") if member.gplus!="" %></a>
+	 	 	<a href="<%= member.facebook %>" target="_blank"><%= image_tag('facebook.png', class: "social-slide") if member.facebook!="" %></a>
+	 	 	<a href="<%= member.github %>" target="_blank"><%= image_tag('github.png', class: "social-slide") if member.github!="" %></a>
+	 	 	<a href="<%= member.linkedin %>" target="_blank"><%= image_tag('linkedin.png', class: "social-slide") if member.linkedin!="" %></a>
+	    </div>
+	  </div>
+	  <% @control = true %>
+	  <hr>
+	<% end %>
+<% end %>
+
+
+<style type="text/css">
+.social-slide {
+	background-image: url('/assets/twitter-bird');
+	height: 48px;
+	width: 48px;
+	margin: 10px;
+	float: left;
+	-webkit-transition: all ease 0.3s;
+	-moz-transition: all ease 0.3s;
+	-o-transition: all ease 0.3s;
+	-ms-transition: all ease 0.3s;
+	transition: all ease 0.3s;
+	cursor: pointer
+}
+
+.social-slide:hover {
+	background-position: 0px -48px;
+	box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+}
+</style>
+
+<script type="text/javascript">
+	
+</script>
