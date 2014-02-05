@@ -34,6 +34,13 @@
   <strong>Minimum capacity:</strong>
   <%= @course.minimum_capacity %>
 </p>
+<p>
+  <strong>Instrutores:</strong>
+  <% @course.users.each do |u| %>
+    <%= u.name %>
+  <% end %>
+</p>
+
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

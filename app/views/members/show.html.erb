@@ -76,6 +76,12 @@
 				  <strong>Linkedin:</strong>
 				  <%= link_to @member.linkedin, @member.linkedin, target: "_" %>
 				</p>
+				<p>
+				  <strong>Roles:</strong>
+				  <% @member.roles.each do |u| %>
+				    <%= u.name %>
+				  <% end %>
+				</p>
 			</div>
 		</div>
 	</div>

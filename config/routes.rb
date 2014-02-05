@@ -1,11 +1,17 @@
 Fabsoft::Application.routes.draw do
-  resources :courses
+  resources :courses do
+    collection do
+      get 'current_courses'
+    end
+  end
+
 
   resources :projects
 
   resources :partners
   resources :abouts
   resources :members
+  resources :students
   devise_for :users
 
   get "welcome/index"

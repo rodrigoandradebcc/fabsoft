@@ -20,6 +20,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
+    @members = Member.includes(:roles).where("roles.name = 'membro'")
   end
 
   # POST /courses
@@ -60,6 +61,10 @@ class CoursesController < ApplicationController
       format.html { redirect_to courses_url }
       format.json { head :no_content }
     end
+  end
+
+  def current_courses
+    @courses = Course.all
   end
 
   private

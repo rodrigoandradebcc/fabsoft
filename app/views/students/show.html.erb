@@ -1,0 +1,51 @@
+<div class="page-header">
+	<h2>Show Member</h2>
+</div>
+
+
+<div class="container">
+  	<div class="row">
+	    <div class="panel panel-default">
+	      	<div class="panel-heading">
+	        	<h3 class="panel-title">Member</h3>
+	  		</div>
+	      	<br>
+	      	<div class="panel-body">
+	      		<p class="pull-right">
+				  <%= image_tag @student.image_url(:thumb).to_s, class: "img-thumbnail" %>
+				</p>
+
+				<p>
+				  <strong>Login:</strong>
+				  <%= @student.login %>
+				</p>
+
+				<p>
+				  <strong>Email:</strong>
+				  <%= @student.email %>
+				</p>
+
+
+				<p>
+				  <strong>Name:</strong>
+				  <%= @student.name %>
+				</p>
+
+				<p>
+				  <strong>Institution:</strong>
+				  <%= @student.institution %>
+				</p>
+
+				<p>
+				  <strong>Semester:</strong>
+				  <%= @student.semester %>
+				</p>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
