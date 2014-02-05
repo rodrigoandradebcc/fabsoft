@@ -39,6 +39,18 @@ class CoursesController < ApplicationController
     end
   end
 
+  def inscrever_se
+    @course = Course.find(params[:id])
+    if current_user.role?("estudante")
+      @course.users << current_user
+      if @course.update(user_ids: @course.users.first.id)
+        redirect_to @course, notice: 'Course was successfully updated.'
+      else
+        redirect_to @course, notice: "Course wasn't successfully updated."
+      end
+    end
+  end
+
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update

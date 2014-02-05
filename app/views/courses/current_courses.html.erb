@@ -25,14 +25,13 @@
           <td><%= link_to 'Show', course %></td>
           <td><%= link_to 'Edit', edit_course_path(course) %></td>
           <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <td><%= link_to 'Increver-se', class: "btn btn-primary" %></td>
+          <td><%= link_to "Increver-se", inscrever_se_courses_path(:id => course.id),:method => :put %></td>
         </tr>
         <% end %>
       </tbody>
     </table>
   </div>
 </div>
-
 
 
 <br>

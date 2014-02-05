@@ -2,6 +2,7 @@ Fabsoft::Application.routes.draw do
   resources :courses do
     collection do
       get 'current_courses'
+      put 'current_courses' => 'courses#inscrever_se', as: :inscrever_se
     end
   end
 
