@@ -35,7 +35,7 @@
 <p>
   <strong>Instrutores:</strong>
   <% @course.users.each do |u| %>
-    <%= u.name %>
+    <%= u.name if u.role?("membro") %>
   <% end %>
 </p>
 

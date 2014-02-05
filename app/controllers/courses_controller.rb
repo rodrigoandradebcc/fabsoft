@@ -43,11 +43,10 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
     if current_user.role?("estudante")
       @course.users << current_user
-      if @course.update(user_ids: @course.users.first.id)
-        redirect_to @course, notice: 'Course was successfully updated.'
-      else
-        redirect_to @course, notice: "Course wasn't successfully updated."
-      end
+      @course.update_attributes(users: @course.users)
+      redirect_to root_path, notice: "Course was successfully updated."
+    else
+      redirect_to root_path, alert: "Course wasn't successfully updated."
     end
   end
 
