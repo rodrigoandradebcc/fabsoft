@@ -14,6 +14,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/new
   def new
+    @members = Member.includes(:roles).where("roles.name = 'membro'")
     @course = Course.new
   end
 
@@ -69,6 +70,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:name, :workload, :specification, :strat_date, :end_date, :maximun_capacity, :minimun_capacity)
+      params.require(:course).permit(:name, :workload, :specification, :start_date, :end_date, :maximum_capacity, :minimum_capacity, :user_ids => [])
     end
 end
