@@ -1,37 +1,57 @@
 <div class="page-header">
-  <h1>Listing courses</h1>
+    <h1>Listing courses</h1>
+  </div>
+<div class="container marketing">
+  <div class="row">
+    <% @courses.each do |course| %>
+      <div class="col-xs-4">
+        <h2><span class="mudaTexto"><%= course.name %></span></h2> 
+        <%= link_to "Increver-se", inscrever_se_courses_path(:id => course.id),:method => :put, :role => "button", :class => "btn btn-success btn-md btn-block" %> 
+      </div>  
+    <% end %>
+  </div>
+
+
+
+
+  <% if false %>
+  <%= link_to 'Show', course, :class => "btn btn-primary", :role => "button" %>
+  <%= link_to 'Edit', edit_course_path(course), :class => "btn btn-primary", :role => "button" %>
+  <%= link_to 'Destroy', course, :class => "btn btn-primary", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 </div>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Courses</h3>
-  </div>
-  <div class="panel-body">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
 
-      <tbody>
-        <% @courses.each do |course| %>
-        <tr>
-          <td><%= course.name %></td>
-          <td><%= link_to 'Show', course %></td>
-          <td><%= link_to 'Edit', edit_course_path(course) %></td>
-          <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <td><%= link_to "Increver-se", inscrever_se_courses_path(:id => course.id),:method => :put %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+<!-- <div class="panel panel-default">
+<div class="panel-heading">
+  <h3 class="panel-title">Courses</h3>
 </div>
+<div class="panel-body">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= link_to 'Show', course %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Increver-se", inscrever_se_courses_path(:id => course.id),:method => :put %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div> -->
 
 
 <br>

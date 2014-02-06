@@ -19,4 +19,8 @@ class WelcomeController < ApplicationController
     @control = true
   	@members = Member.all
   end
+
+  def courses
+    @courses = courses.all
+  end
 end
