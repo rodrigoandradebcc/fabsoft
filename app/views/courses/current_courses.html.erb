@@ -4,15 +4,17 @@
 <div class="container marketing">
   <div class="row">
     <% @courses.each do |course| %>
-      <div class="col-xs-4">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h2><span class="mudaTexto"><%= course.name %></span></h2>
-            <h4><i class="glyphicon glyphicon-time"></i> <%=course.workload%> horas </h4> 
-            <%= link_to "Increver-se", inscrever_se_courses_path(:id => course.id),:method => :put, :role => "button", :class => "btn btn-success btn-md btn-block" %> 
+      <a href="<%=see_more_courses_path(course)%>" class="mudaTexto">
+        <div class="col-xs-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h2><span class="mudaTexto"><%= course.name %></span></h2>
+              <h4><i class="glyphicon glyphicon-time"></i> <%=course.workload%> horas </h4> 
+              <%= link_to "Increver-se", inscrever_se_courses_path(:id => course.id),:method => :put, :role => "button", :class => "btn btn-success btn-md btn-block" %>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     <% end %>
   </div> <!-- row -->
 </div> <!-- marketing -->

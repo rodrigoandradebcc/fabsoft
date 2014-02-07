@@ -8,7 +8,6 @@ Fabsoft::Application.routes.draw do
 
 
   resources :projects
-
   resources :partners
   resources :abouts
   resources :members

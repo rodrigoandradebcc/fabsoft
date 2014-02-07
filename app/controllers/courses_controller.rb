@@ -15,6 +15,11 @@ class CoursesController < ApplicationController
     add_breadcrumb "Show Course", course_path(@course)
   end
 
+  def see_more
+    add_breadcrumb "List Course", see_more_courses_path
+    add_breadcrumb "Show Course", see_more_courses_path(@course)    
+  end
+
   # GET /courses/new
   def new
     @members = Member.includes(:roles).where("roles.name = 'membro'")
@@ -44,7 +49,7 @@ class CoursesController < ApplicationController
 
   def inscrever_se
     @course = Course.find(params[:id])
-    if current_user.role?("estudante") && current_user.present?
+    if current_user.present? && current_user.role?("estudante") 
       @course.users << current_user
       @course.update_attributes(users: @course.users)
       redirect_to root_path, notice: "Course was successfully updated."
