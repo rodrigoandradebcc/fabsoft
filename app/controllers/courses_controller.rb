@@ -44,7 +44,7 @@ class CoursesController < ApplicationController
 
   def inscrever_se
     @course = Course.find(params[:id])
-    if current_user.role?("estudante")
+    if current_user.role?("estudante") && current_user.present?
       @course.users << current_user
       @course.update_attributes(users: @course.users)
       redirect_to root_path, notice: "Course was successfully updated."
