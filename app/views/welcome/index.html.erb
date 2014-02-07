@@ -69,7 +69,7 @@ body {
       <div class="row">
       	<% @projects.each do |project| %>
 	        <div class="col-md-4">
-    			<%= image_tag project.image_url(:thumb), size: "540x140", alt: "Generic placeholder image", style: "margin-left: 120px;" %>
+    			<%= link_to (image_tag project.image_url(:thumb), size: "540x140", alt: "Generic placeholder image", style: "margin-left: 120px;"), welcome_projects_path %>
     			<h2 style="margin-left: 120px;"><span class="text-muted"><%= project.name %></span></h2>
 	          	<p><%= raw(project.description) %></p>
 	        </div><!-- /.col-lg-4 -->
