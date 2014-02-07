@@ -1,5 +1,5 @@
 @import url("//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700");
-
+@import url('//fonts.googleapis.com/css?family=Lobster|Cabin:400,700');
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 
 article,
@@ -7677,4 +7677,12 @@ td.visible-print {
 
 .affix {
   position: fixed;
+}
+
+.marketing .row{
+  text-align: center;
+}
+
+.mudaTexto {
+  font-family: 'Lobster',cursive;
 }

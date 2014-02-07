@@ -5,11 +5,14 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
+    add_breadcrumb "List Courses", courses_path
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
+    add_breadcrumb "List Course", courses_path
+    add_breadcrumb "Show Course", course_path(@course)
   end
 
   # GET /courses/new
@@ -76,6 +79,7 @@ class CoursesController < ApplicationController
 
   def current_courses
     @courses = Course.all
+    add_breadcrumb "List Courses", courses_path
   end
 
   private
