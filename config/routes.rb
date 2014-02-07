@@ -19,6 +19,7 @@ Fabsoft::Application.routes.draw do
   get "welcome/partners"
   get "welcome/projects"
   get "welcome/members"
+  get "welcome/see_more/:id" => 'welcome#see_more', as: :see_more
   
 
   # The priority is based upon order of creation: first created -> highest priority.

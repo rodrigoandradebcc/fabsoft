@@ -15,11 +15,6 @@ class CoursesController < ApplicationController
     add_breadcrumb "Show Course", course_path(@course)
   end
 
-  def see_more
-    add_breadcrumb "List Course", see_more_courses_path
-    add_breadcrumb "Show Course", see_more_courses_path(@course)    
-  end
-
   # GET /courses/new
   def new
     @members = Member.includes(:roles).where("roles.name = 'membro'")
