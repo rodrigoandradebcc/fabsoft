@@ -32,10 +32,16 @@
   <strong>Minimum capacity:</strong>
   <%= @course.minimum_capacity %>
 </p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @course.image_url(:thumb).to_s %>
+</p>
+
 <p>
   <strong>Instrutores:</strong>
   <% @course.users.each do |u| %>
-    <%= u.name if u.role?("membro") %>
+  <%= u.name if u.role?("membro") %>
   <% end %>
 </p>
 

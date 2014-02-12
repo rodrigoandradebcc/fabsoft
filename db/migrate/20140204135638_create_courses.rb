@@ -8,7 +8,6 @@ class CreateCourses < ActiveRecord::Migration
       t.date :end_date
       t.integer :maximum_capacity
       t.integer :minimum_capacity
-
       t.timestamps
     end
   end

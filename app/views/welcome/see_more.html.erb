@@ -1,49 +1,59 @@
 <div class="container">
-  <div class="row well">
-    <h2>Informations:</h2>
-    <p>
-      <strong>Name:</strong>
-      <%= @course.name %>
-    </p>
+  <div class="row">
+    <div class="col-md-8">
+      
+      <p>
+       <%= image_tag @course.image_url(:thumb).to_s, :size => '350x350'%>
+      </p>
 
-    <p>
-      <strong>Workload:</strong>
-      <%= @course.workload %>
-    </p>
+      <h4>
+        <strong>Name:</strong>
+        <%= @course.name %>
+      </h4>
+      <h4>
+        <strong>Specification:</strong>
+        <%= @course.specification %>
+      </h4>
 
-    <p>
-      <strong>Specification:</strong>
-      <%= @course.specification %>
-    </p>
 
-    <p>
-      <strong>Start date:</strong>
-      <%= @course.start_date %>
-    </p>
-
-    <p>
-      <strong>End date:</strong>
-      <%= @course.end_date %>
-    </p>
-
-    <p>
-      <strong>Maximum capacity:</strong>
-      <%= @course.maximum_capacity %>
-    </p>
-
-    <p>
-      <strong>Minimum capacity:</strong>
-      <%= @course.minimum_capacity %>
-    </p>
-    <p>
-      <strong>Instrutores:</strong>
+     <%= link_to 'Back', current_courses_courses_path, class: "btn btn-primary" %>
+   </div>
+   <div class="col-md-4 well">
+    <h3>Informations</h3>
+    
+      <h4>
+        <i class="glyphicon glyphicon-time"></i>
+        <strong>Worload:</strong>
+        <%= @course.workload %>
+      </h4>
+      <h4>
+        <i class="glyphicon glyphicon-calendar"></i>
+        <strong>Start date:</strong>
+        <%= @course.start_date %>
+      </h4>
+      <h4>
+        <i class="glyphicon glyphicon-calendar"></i>
+        <strong>End date:</strong>
+        <%= @course.end_date %>
+      </h4>
+      <h4>
+        <i class="glyphicon glyphicon-plus"></i>
+        <strong>Maximum capacity:</strong>
+        <%= @course.maximum_capacity %>
+      </h4>
+      <h4>
+        <i class="glyphicon glyphicon-minus"></i>
+        <strong>Minimum capacity:</strong>
+        <%= @course.minimum_capacity %>
+      </h4>
+      <hr/>
+      <h3>Instructors</h3>
       <% @course.users.each do |u| %>
-      <%= u.name if u.role?("membro") %>
+      <%= image_tag u.image_url(:thumb).to_s, size: "70x70", class: "img-circle", id: "espacoImagem" %>
+      <strong><%= u.name %></strong>
+      <br/>
+      <br/>
       <% end %>
-    </p>
-
-
-
-    <%= link_to 'Back', current_courses_courses_path, class: "btn btn-primary" %>
+    </div>     
   </div>
 </div>

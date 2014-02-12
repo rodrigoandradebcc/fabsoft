@@ -1,12 +1,12 @@
 class Course < ActiveRecord::Base
 	has_and_belongs_to_many :users
-
 	validates_numericality_of :workload, :maximum_capacity, :minimum_capacity, :greater_than => 0
 	validates :user_ids, :presence => {:message => 'Selecione ao menos um instrutor'}
 	validates :end_date, :start_date, :presence => {:message => 'Selecione uma data'}
 	validate :capacity_validate
 	validate :date_validate
-	
+	mount_uploader :image, ImageUploader
+
 	private
 	def capacity_validate
 		if minimum_capacity > maximum_capacity
