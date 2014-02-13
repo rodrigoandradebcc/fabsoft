@@ -9,9 +9,9 @@
           <div class="panel panel-default">
             <div class="panel-body">
               <h2><span class="mudaTexto"><%= course.name %></span></h2>
-              <%= image_tag course.image_url(:thumb).to_s %>
-              <h4><i class="glyphicon glyphicon-time"></i> <%=course.workload%> horas </h4> 
-              <%= link_to "Increver-se", inscrever_se_courses_path(:id => course.id),:method => :put, :role => "button", :class => "btn btn-success btn-md btn-block" %>
+              <%= image_tag course.image_url(:thumb).to_s, :size => '200x200' %>
+              <h4><i class="glyphicon glyphicon-time"></i> <%= course.workload %> horas </h4> 
+              <%= link_to "Inscrever-se", inscrever_se_courses_path(:id => course.id),:method => :put, :role => "button", :class => "btn btn-success btn-md btn-block" %>
             </div>
           </div>
         </div>
