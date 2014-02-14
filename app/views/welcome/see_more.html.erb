@@ -11,12 +11,14 @@
 				<br/>	
 
 				<p align="center">
-					<%= image_tag @course.image_url(:thumb).to_s, :size => '250x350', class: "img-responsive"%>
+					<%= image_tag @course.image_url(:thumb).to_s, :size => '250x350', class: "img-responsive" %>
 				</p>
 
 				<br/>
 
-				<p><strong>Specification:</strong> <%= raw(@course.specification) %></p>
+				<div class="pog">
+					<p><strong>Specification:</strong> <%= raw(@course.specification) %></p>
+				</div>
 
 				<%= link_to 'Back', current_courses_courses_path, class: "btn btn-primary" %>
 			</div>
@@ -38,10 +40,10 @@
 			
 			<% @course.users.each do |u| %>
 			<div class="col-md-6" align="center" >
-				<%= image_tag u.image_url(:thumb).to_s, size: "100x100", class: "img-circle "%>
+				<%= image_tag u.image_url(:thumb).to_s, size: "100x100", class: "img-circle " if u.type == "Member" %>
 				<br/>
 				<br/>
-				<strong ><%= u.name if u.type = "member" %></strong>	
+				<strong ><%= u.name if u.type == "Member" %></strong>
 				<br/>
 				<br/>
 			</div>
