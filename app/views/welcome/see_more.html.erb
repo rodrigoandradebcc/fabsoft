@@ -15,9 +15,9 @@
 				</p>
 
 				<br/>
-
-				<div class="pog">
-					<p><strong>Specification:</strong> <%= raw(@course.specification) %></p>
+				<strong>Specification:</strong>
+				<div class="pog" type="text">
+					<p> <%= raw(@course.specification) %></p>
 				</div>
 
 				<%= link_to 'Back', current_courses_courses_path, class: "btn btn-primary" %>

@@ -7730,7 +7730,8 @@ a:hover{
 }
 
 .pog p{
-  text-align: justify;
-  text-indent: 15px;
-  width: 100px;
+
+  overflow:hidden;
+  word-wrap: break-word;
+
 }
