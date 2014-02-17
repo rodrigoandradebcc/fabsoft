@@ -69,7 +69,6 @@ body {
       <div class="row">
       	<% @projects.each do |project| %>
 	        <div class="col-md-4">
-    			<%= link_to (image_tag project.image), welcome_projects_path %>
     			<h2 style="margin-center: 120px;"><span class="text-muted"><%= project.name %></span></h2>
 	          	<p><%= raw(project.description) %></p>
 	        </div><!-- /.col-lg-4 -->

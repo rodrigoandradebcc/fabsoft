@@ -10,12 +10,12 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery.min.js
 //= require jquery_ujs
-//= require jquery.Jcrop
-//= require twitter/bootstrap
-//= require summernote
+//= require jquery.Jcrop.min.js
+//= require bootstrap.min.js
+//= require summernote.min.js
 //= require bootstrap-datepicker
-//= require maskedinput
+//= require jquery.maskedinput.min.js
 //= require_tree .
 
