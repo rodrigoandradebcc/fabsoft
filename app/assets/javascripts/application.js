@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery.Jcrop.min.js
 //= require bootstrap.min.js
-//= require summernote.min.js
+//= require summernote
 //= require bootstrap-datepicker
 //= require jquery.maskedinput.min.js
 //= require_tree .

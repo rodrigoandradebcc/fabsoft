@@ -10,9 +10,69 @@
  *
  *= require jquery.Jcrop.min.css
  *= require twitter/bootstrap
- *= require yeti
+ *= require font-awesome
  *= require summernote
  *= require bootstrap-datepicker
  *= require_tree .
  *= require_self
  */
+
+body {
+  padding-top: 70px;
+}
+
+ .mudaTexto {
+  font-family: 'Lobster',cursive;
+}
+
+.mudaCorIcones{
+    color: #000011;
+    text-decoration: none;
+
+}
+
+div a:hover{
+  text-decoration: none;
+  color: #000011;
+}
+
+#margemParabaixo{
+  margin-bottom: 25px;  
+}
+
+#margemParaEsquerda{
+  margin-left: 5px;
+  margin-right: -30px;  
+}
+
+#espacosParaAmbosOsLados{
+  padding-left: 55px;
+  padding-right: 55px;
+  
+}
+
+#quadroCursosUsers{
+  background: #f7f7f7;
+  color: #000000;
+  min-height: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-right: 0px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  padding-bottom: -555px;
+}
+
+#tabulacao{
+  padding-left: 2px;
+}
+
+.pog p{
+  overflow:hidden;
+  word-wrap: break-word;
+}
+
+.pogPular{
+  overflow:hidden;
+  word-wrap: break-word; 
+}

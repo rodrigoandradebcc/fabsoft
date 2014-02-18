@@ -68,7 +68,7 @@ body {
  <!-- Three columns of text below the carousel -->
       <div class="row">
       	<% @projects.each do |project| %>
-	        <div class="col-md-4">
+	        <div class="col-md-4 text-center">
     			<h2 style="margin-center: 120px;"><span class="text-muted"><%= project.name %></span></h2>
 	          	<p><%= raw(project.description) %></p>
 	        </div><!-- /.col-lg-4 -->
