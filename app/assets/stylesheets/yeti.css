@@ -7687,13 +7687,13 @@ td.visible-print {
   font-family: 'Lobster',cursive;
 }
 
-a {
+.mudaCorIcones{
     color: #000011;
     text-decoration: none;
 
 }
 
-a:hover{
+div a:hover{
   text-decoration: none;
   color: #000011;
 }
@@ -7730,8 +7730,11 @@ a:hover{
 }
 
 .pog p{
-
   overflow:hidden;
   word-wrap: break-word;
+}
 
+#pogPular{
+  overflow:hidden;
+  word-wrap: break-word; 
 }
