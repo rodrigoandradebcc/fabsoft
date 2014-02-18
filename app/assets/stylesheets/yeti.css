@@ -7734,7 +7734,7 @@ div a:hover{
   word-wrap: break-word;
 }
 
-#pogPular{
+.pogPular{
   overflow:hidden;
   word-wrap: break-word; 
 }
