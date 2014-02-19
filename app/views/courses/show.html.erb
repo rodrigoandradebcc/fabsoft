@@ -1,51 +1,68 @@
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
+<div class="page-header">
+  <h2>Show Course</h2>
+</div>
 
-<p>
-  <strong>Workload:</strong>
-  <%= @course.workload %>
-</p>
+<div class="container">
+    <div class="row">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Member</h3>
+        </div>
+          <br>
+          <div class="panel-body">
+            <p class="pull-right">
+              <%= image_tag @course.image_url(:thumb).to_s %>
+            </p>
 
-<p>
-  <strong>Specification:</strong>
-  <div id="pogPular">
-    <%= @course.specification %>
+            <p>
+              <strong>Name:</strong>
+              <%= @course.name %>
+            </p>
+
+            <p>
+              <strong>Workload:</strong>
+              <%= @course.workload %>
+            </p>
+
+            <p>
+              <strong>Specification:</strong>
+              <div id="pogPular">
+                <%= @course.specification %>
+              </div>
+            </p>
+
+            <p>
+              <strong>Start date:</strong>
+              <%= @course.start_date %>
+            </p>
+
+            <p>
+              <strong>End date:</strong>
+              <%= @course.end_date %>
+            </p>
+
+            <p>
+              <strong>Maximum capacity:</strong>
+              <%= @course.maximum_capacity %>
+            </p>
+
+            <p>
+              <strong>Minimum capacity:</strong>
+              <%= @course.minimum_capacity %>
+            </p>
+
+            
+
+            <p>
+              <strong>Instrutores:</strong>
+              <% @course.users.each do |u| %>
+              <%= u.name if u.role?("membro") %>
+              <% end %>
+            </p>
+        </div>
+    </div>
   </div>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @course.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @course.end_date %>
-</p>
-
-<p>
-  <strong>Maximum capacity:</strong>
-  <%= @course.maximum_capacity %>
-</p>
-
-<p>
-  <strong>Minimum capacity:</strong>
-  <%= @course.minimum_capacity %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @course.image_url(:thumb).to_s %>
-</p>
-
-<p>
-  <strong>Instrutores:</strong>
-  <% @course.users.each do |u| %>
-  <%= u.name if u.role?("membro") %>
-  <% end %>
-</p>
+</div>
 
 
 <%= link_to 'Edit', edit_course_path(@course) %> |

@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    add_breadcrumb "List Course", courses_path
+    add_breadcrumb "List Courses", courses_path
     add_breadcrumb "Show Course", course_path(@course)
   end
 
@@ -19,11 +19,16 @@ class CoursesController < ApplicationController
   def new
     @members = Member.includes(:roles).where("roles.name = 'membro'")
     @course = Course.new
+    add_breadcrumb "List Courses", courses_path
+    add_breadcrumb "Create Course", new_course_path
   end
 
   # GET /courses/1/edit
   def edit
     @members = Member.includes(:roles).where("roles.name = 'membro'")
+    add_breadcrumb "List Courses", courses_path
+    add_breadcrumb "Show Course", course_path(@course)
+    add_breadcrumb "Edit Course", edit_course_path(@course)
   end
 
   # POST /courses
@@ -79,7 +84,6 @@ class CoursesController < ApplicationController
 
   def current_courses
     @courses = Course.all
-    add_breadcrumb "List Courses", courses_path
   end
 
   private

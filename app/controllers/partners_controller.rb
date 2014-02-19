@@ -26,7 +26,7 @@ class PartnersController < ApplicationController
   def edit
     add_breadcrumb "List Partners", partners_path
     add_breadcrumb "Show Partner", partner_path(@partner)
-    add_breadcrumb "Edit Partners", edit_partner_path(@partner)
+    add_breadcrumb "Edit Partner", edit_partner_path(@partner)
   end
 
   # POST /partners
