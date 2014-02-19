@@ -3,6 +3,9 @@ Fabsoft::Application.routes.draw do
     collection do
       get 'current_courses'
       put 'current_courses' => 'courses#inscrever_se', as: :inscrever_se
+
+      get 'alunos_cadastrados'
+      
     end
   end
 
