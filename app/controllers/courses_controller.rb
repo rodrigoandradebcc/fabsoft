@@ -58,6 +58,11 @@ class CoursesController < ApplicationController
     end
   end
 
+  def alunos_cadastrados
+    @users = User.includes(:courses).where(courses: { 4 })
+    @members = @users.where(type: 'Student')
+  end
+
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update

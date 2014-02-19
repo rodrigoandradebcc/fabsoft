@@ -1,69 +1,58 @@
-<div class="page-header">
-  <h2>Show Course</h2>
-</div>
-
 <div class="container">
-    <div class="row">
-      <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Member</h3>
+  <div class="row clearfix">
+
+
+    <div class="col-md-8 column">
+      <div >
+        <div id="quadroCursosUsers">
+          <h1><%= @course.name %> </h1>
         </div>
-          <br>
-          <div class="panel-body">
-            <p class="pull-right">
-              <%= image_tag @course.image_url(:thumb).to_s %>
-            </p>
 
-            <p>
-              <strong>Name:</strong>
-              <%= @course.name %>
-            </p>
+        <br/> 
 
-            <p>
-              <strong>Workload:</strong>
-              <%= @course.workload %>
-            </p>
+        <p align="center">
+          <%= image_tag @course.image_url(:thumb).to_s, :size => '250x350', class: "img-responsive" %>
+        </p>
 
-            <p>
-              <strong>Specification:</strong>
-              <div id="pogPular">
-                <%= @course.specification %>
-              </div>
-            </p>
-
-            <p>
-              <strong>Start date:</strong>
-              <%= @course.start_date %>
-            </p>
-
-            <p>
-              <strong>End date:</strong>
-              <%= @course.end_date %>
-            </p>
-
-            <p>
-              <strong>Maximum capacity:</strong>
-              <%= @course.maximum_capacity %>
-            </p>
-
-            <p>
-              <strong>Minimum capacity:</strong>
-              <%= @course.minimum_capacity %>
-            </p>
-
-            
-
-            <p>
-              <strong>Instrutores:</strong>
-              <% @course.users.each do |u| %>
-              <%= u.name if u.role?("membro") %>
-              <% end %>
-            </p>
+        <br/>
+        <strong>Specification:</strong>
+        <div class="pogPular" type="text">
+          <p> <%= raw(@course.specification) %></p>
         </div>
+
+        <%= link_to 'Edit', edit_course_path(@course), class: "btn btn-primary" %> 
+        <%= link_to 'Back', courses_path, class: "btn btn-primary" %>
+      </div>
     </div>
+    
+    <div class="col-md-4 column well">
+      <div id="espacosParaAmbosOsLados">
+        <h3 id="margemParabaixo">Informations</h3>
+        <h4><i class="glyphicon glyphicon-time"></i><strong> Workload:</strong> <%= @course.workload %> </h4>
+        <h4><i class="glyphicon glyphicon-calendar"></i><strong> Start date:</strong> <%= @course.start_date %> </h4>
+        <h4><i class="glyphicon glyphicon-calendar"></i><strong> End date:</strong> <%= @course.end_date %> </h4>
+        <h4><i class="glyphicon glyphicon-plus"></i><strong> Maximum capacity:</strong> <%= @course.maximum_capacity %> </h4>
+        <h4 id="margemParabaixo"><i class="glyphicon glyphicon-minus"></i><strong> Minimum capacity:</strong> <%= @course.minimum_capacity %> </h4>
+        <hr/>
+
+        <h3 id="margemParabaixo">Instructors</h3>
+
+      </div>
+      
+      <% @course.users.each do |u| %>
+      <div class="col-md-6" align="center" >
+        <%= image_tag u.image_url(:thumb).to_s, size: "100x100", class: "img-circle " if u.type == "Member" %>
+        <br/>
+        <br/>
+        <strong ><%= u.name if u.type == "Member" %></strong>
+        <br/>
+        <br/>
+      </div>
+      <% end %>
+      <br/>
+      
+    </div>
+
   </div>
 </div>
 
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
