@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_course, only: [:show, :edit, :update, :destroy, :alunos_cadastrados]
 
   # GET /courses
   # GET /courses.json
@@ -58,10 +58,10 @@ class CoursesController < ApplicationController
     end
   end
 
-  # def alunos_cadastrados
-  #   @users = User.includes(:courses).where(courses: { 4 })
-  #   @members = @users.where(type: 'Student')
-  # end
+  def alunos_cadastrados
+    @users = User.includes(:courses).where(courses: @course.id)
+    @members = @users.where(type: 'Student')
+  end
 
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
