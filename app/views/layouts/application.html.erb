@@ -22,7 +22,7 @@
 		<div class="row">
 			<%= render 'layouts/navbar' %>
 			<%= render 'layouts/messages' %>
-			<% if params[:controller] != 'welcome' && params[:controller] != 'devise/registrations' %>
+			<% if params[:controller] != 'welcome' && params[:controller] != 'devise/registrations' && params[:controller] != 'devise/sessions' %>
 				<ol class="breadcrumb">
 					<%= render_breadcrumbs :tag => :li, :separator => "" %>
 				</ol>
