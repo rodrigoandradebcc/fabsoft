@@ -27,4 +27,9 @@ class WelcomeController < ApplicationController
   def see_more
     @course = Course.find(params[:id])
   end
+
+  def current_courses
+    @courses = Course.all
+  end
+  
 end

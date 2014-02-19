@@ -58,10 +58,10 @@ class CoursesController < ApplicationController
     end
   end
 
-  def alunos_cadastrados
-    @users = User.includes(:courses).where(courses: { 4 })
-    @members = @users.where(type: 'Student')
-  end
+  # def alunos_cadastrados
+  #   @users = User.includes(:courses).where(courses: { 4 })
+  #   @members = @users.where(type: 'Student')
+  # end
 
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
@@ -87,9 +87,7 @@ class CoursesController < ApplicationController
     end
   end
 
-  def current_courses
-    @courses = Course.all
-  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

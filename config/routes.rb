@@ -1,11 +1,8 @@
 Fabsoft::Application.routes.draw do
   resources :courses do
     collection do
-      get 'current_courses'
       put 'current_courses' => 'courses#inscrever_se', as: :inscrever_se
-
       get 'alunos_cadastrados'
-      
     end
   end
 
@@ -22,6 +19,7 @@ Fabsoft::Application.routes.draw do
   get "welcome/partners"
   get "welcome/projects"
   get "welcome/members"
+  get "welcome/current_courses"
   get "welcome/see_more/:id" => 'welcome#see_more', as: :see_more
   
 
