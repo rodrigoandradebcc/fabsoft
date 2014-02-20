@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy, :alunos_cadastrados]
+  before_action :set_course, only: [:show, :edit, :update, :destroy, :registered_students]
 
   # GET /courses
   # GET /courses.json
@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    add_breadcrumb "List Course", courses_path
+    add_breadcrumb "List Courses", courses_path
     add_breadcrumb "Show Course", course_path(@course)
   end
 
@@ -42,7 +42,7 @@ class CoursesController < ApplicationController
     end
   end
 
-  def inscrever_se
+  def register
     @course = Course.find(params[:id])
     if current_user.present? && current_user.role?("estudante") 
       @course.users << current_user
@@ -54,8 +54,10 @@ class CoursesController < ApplicationController
   end
 
 
-  def alunos_cadastrados
-    # Recupera do db, estudantes presentes no curso escolhido.
+  def registered_students
+    # Recover from db, students that had been registered in that course.
+    add_breadcrumb "List Courses", courses_path
+    add_breadcrumb "Show Students", course_path(@course)
     @students = User.includes(:courses).where("courses.id = '#{@course.id}' && type = 'Student'")
   end
 

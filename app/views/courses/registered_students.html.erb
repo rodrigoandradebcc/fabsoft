@@ -11,10 +11,9 @@
       <thead>
         <tr>
           <th>Name</th>
-          
+          <th>Email</th>
+          <th>Telefone</th>
           <th>Type</th>
-          <th></th>
-          <th></th>
         </tr>
       </thead>
 
@@ -22,9 +21,8 @@
         <% @students.each do |student| %>
           <tr>
             <td><%= student.name %></td>
+            <td><%= student.email %></td>
             <td><%= student.type %></td>
-            
-            </td>
           </tr>
         <% end %>
       </tbody>
@@ -32,5 +30,3 @@
   </div> <!-- End Panel -->
 </div>
 <br>
-
-<%= link_to 'New Member', new_member_path %>

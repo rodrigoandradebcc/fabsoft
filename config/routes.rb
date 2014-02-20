@@ -1,8 +1,8 @@
 Fabsoft::Application.routes.draw do
   resources :courses do
     collection do
-      put 'current_courses' => 'courses#inscrever_se', as: :inscrever_se
-      get "alunos_cadastrados/:id" => 'courses#alunos_cadastrados', as: :alunos_cadastrados
+      put 'current_courses' => 'courses#register', as: :register
+      get "registered_students/:id" => 'courses#registered_students', as: :registered_students
     end
   end
 

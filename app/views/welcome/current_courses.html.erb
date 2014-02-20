@@ -12,7 +12,7 @@
               <%= image_tag course.image_url(:thumb).to_s, :size => '200x200' %>
               <h4><i class="glyphicon glyphicon-time"></i> <%= course.workload %> horas </h4>
               <% if current_user.present? && current_user.role?('estudante') %> 
-                <%= link_to "Inscrever-se", inscrever_se_courses_path(:id => course.id),:method => :put, :role => "button", :class => "btn btn-success btn-md btn-block" %>
+                <%= link_to "Inscrever-se", register_courses_path(:id => course.id),:method => :put, :role => "button", :class => "btn btn-success btn-md btn-block" %>
               <% end %>
             </div>
           </div>
@@ -24,9 +24,10 @@
 
 
 
-<!-- Parte do código que não é visivel -->
+<!-- Parte da POG que não é visivel
   <% if false %>
   <%= link_to 'Show', course, :class => "btn btn-primary", :role => "button" %>
   <%= link_to 'Edit', edit_course_path(course), :class => "btn btn-primary", :role => "button" %>
   <%= link_to 'Destroy', course, :class => "btn btn-primary", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
+-->
