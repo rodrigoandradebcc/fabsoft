@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy ]
+  before_action :set_course, only: [:show, :edit, :update, :destroy, :alunos_cadastrados]
 
   # GET /courses
   # GET /courses.json
