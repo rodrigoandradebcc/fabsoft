@@ -1,26 +1,20 @@
 <div class="container">
 	<div class="row clearfix">
-		
-
 		<div class="col-md-8 column">
-			<div >
+			<div>
 				<div id="quadroCursosUsers">
 					<h1><%= @course.name %> </h1>
 				</div>
-
 				<br/>	
-
 				<p align="center">
 					<%= image_tag @course.image_url(:thumb).to_s, :size => '250x350', class: "img-responsive" %>
 				</p>
-
 				<br/>
 				<strong>Specification:</strong>
 				<div class="pogPular" type="text">
 					<p> <%= raw(@course.specification) %></p>
 				</div>
-
-				<%= link_to 'Back', current_courses_courses_path, class: "btn btn-primary" %>
+				<%= link_to 'Back', welcome_current_courses_path, class: "btn btn-primary" %>
 			</div>
 		</div>
 		
@@ -33,9 +27,7 @@
 				<h4><i class="glyphicon glyphicon-plus"></i><strong> Maximum capacity:</strong> <%= @course.maximum_capacity %> </h4>
 				<h4 id="margemParabaixo"><i class="glyphicon glyphicon-minus"></i><strong> Minimum capacity:</strong> <%= @course.minimum_capacity %> </h4>
 				<hr/>
-
 				<h3 id="margemParabaixo">Instructors</h3>
-
 			</div>
 			
 			<% @course.users.each do |u| %>
@@ -49,8 +41,6 @@
 			</div>
 			<% end %>
 			<br/>
-			
 		</div>
-
 	</div>
 </div>

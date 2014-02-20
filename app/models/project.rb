@@ -1,13 +1,12 @@
 class Project < ActiveRecord::Base
 	### Presence ###
-	validates_presence_of :name
-	validates_presence_of :description
-	validates_presence_of :url
+	validates_presence_of :name, :description, :url
 
 	### Uniqueness ###
 	validates_uniqueness_of :name
 	
-	mount_uploader :image, AvatarUploader
+	mount_uploader :image, AvatarUploader 
+
 	attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 	after_update :crop_avatar
 
