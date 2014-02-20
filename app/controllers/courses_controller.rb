@@ -57,7 +57,7 @@ class CoursesController < ApplicationController
   def registered_students
     # Recover from db, students that had been registered in that course.
     add_breadcrumb "List Courses", courses_path
-    add_breadcrumb "Show Students", course_path(@course)
+    add_breadcrumb "List Students", registered_students_courses_path(@course)
     @students = User.includes(:courses).where("courses.id = '#{@course.id}' && type = 'Student'")
   end
 
