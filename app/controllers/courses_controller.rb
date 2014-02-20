@@ -58,9 +58,10 @@ class CoursesController < ApplicationController
     end
   end
 
+
   def alunos_cadastrados
-    @users = User.includes(:courses).where(courses: @course.id)
-    @members = @users.where(type: 'Student')
+    # Recupera do db, estudantes presentes no curso escolhido.
+    @students = User.includes(:courses).where("courses.id = '#{@course.id}' && type = 'Student'")
   end
 
   # PATCH/PUT /courses/1
