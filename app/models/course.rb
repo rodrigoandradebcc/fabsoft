@@ -6,6 +6,7 @@ class Course < ActiveRecord::Base
 	validate :capacity_validate
 	validate :date_validate
 	mount_uploader :image, ImageUploader
+	attr_accessor
 
 	private
 	def capacity_validate
