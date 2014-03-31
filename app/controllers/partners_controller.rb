@@ -19,7 +19,7 @@ class PartnersController < ApplicationController
   def new
     @partner = Partner.new
     add_breadcrumb "List Partners", partners_path
-    add_breadcrumb "Create Partners", partner_path
+    add_breadcrumb "Create Partners", new_partner_path
   end
 
   # GET /partners/1/edit
@@ -32,7 +32,7 @@ class PartnersController < ApplicationController
   # POST /partners
   # POST /partners.json
   def create
-    @partner = Parnter.new(partner_params)
+    @partner = Partner.new(partner_params)
 
     if @partner.save
       if params[:partner][:image].present?
